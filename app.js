@@ -8,8 +8,9 @@ var defaultRouter = require('./routes/default');
 var adminRouter = require('./routes/admin');
 var hbs = require('hbs');
 var mongoose = require('mongoose');
+var {mongo_url} = require('./config');
 
-mongoose.connect('mongodb://localhost:27017/cms', {useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(mongo_url, {useUnifiedTopology: true, useNewUrlParser: true })
   .then(success => {
     console.log('MongoDB connected succefully');
   })
